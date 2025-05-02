@@ -12,6 +12,9 @@
   grid-column-end: 5;
   background-image: url('../public/5xirqoi1mpy61.webp');
   background-position: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .connexion {
@@ -20,4 +23,57 @@
   grid-column-start: 5;
   grid-column-end: 13;
   background-color: #161D26;
+  padding: 30px;
+}
+
+
+.connexionContent {
+  margin-top: 20px;
+  color: white;
+}
+
+.title {
+  font-size: 70px;
+}
+
+.subtitle {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.text {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.signupButton {
+  background-color: #3F93E8;
+  border: none;
+  padding: 2px 40px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.signupButton:hover {
+  background-color: #347AC2;
+}
+
+.signinButton {
+  border: 1px solid white;
+  padding: 2px 40px;
+  border-radius: 25px;
+  background-color: transparent;
+  color: #267CDD;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.signinButton:hover {
+  background-color: #223040;
 }

@@ -8,3 +8,9 @@ body {
 * {
   box-sizing: border-box;
 }
+
+/* Style of connexion modals */
+.modal .ant-modal-content {
+  background-color: #161D26;
+  color: white;
+}
