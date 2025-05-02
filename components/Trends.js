@@ -9,7 +9,7 @@ function Trends(){
       <div>
         <p>Trends</p>
       </div>
-      <div>
+      <div className={styles.trendslist}>
         <p>TRENDS CONTENT</p>
       </div>
     </div>
