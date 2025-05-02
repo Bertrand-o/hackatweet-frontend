@@ -1,0 +1,23 @@
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.banner {
+  grid-row-start: 1;
+  grid-row-end: 13;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  background-image: url('../public/5xirqoi1mpy61.webp');
+  background-position: cover;
+}
+
+.connexion {
+  grid-row-start: 1;
+  grid-row-end: 13;
+  grid-column-start: 5;
+  grid-column-end: 13;
+  background-color: #161D26;
+}
