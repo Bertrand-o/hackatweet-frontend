@@ -1,0 +1,36 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-weight: bold;  
+  font-size: 22px;
+}
+
+.texarea{
+  background-color:  #161D26;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  border: none;
+  border-bottom: solid 2px grey;
+  margin: 20px 50px
+}
+
+.positionbutton{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+}
+
+.buttonclick{
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #3F93E8;
+  height: 35px;
+  width: 150px;
+  border-radius: 25px;
+  margin-right: 20px;
+}
+

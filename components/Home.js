@@ -1,14 +1,31 @@
-import styles from '../styles/Home.module.css';
+import styles from "../styles/Home.module.css";
+import Image from "next/image";
+import Tweet from './Tweet';
+import Trends from './Trends'
 
 function Home() {
   return (
-      <main className={styles.main}>
-        <div id="leftcontainer">
-          
+    <div className={styles.main}>
+      <div id="leftcontainer" className={styles.left}>
+        <div>
+          <Image
+            src="/logohome.png"
+            alt="Logo Twitter"
+            width={80}
+            height={80}
+          />
         </div>
-        <div id="rightcontainer">
+        <div className={styles.user}>
+          USER
         </div>
-      </main>
+      </div>
+      <div id="centercontainer" className={styles.center}>
+        < Tweet/>
+      </div>
+      <div id="rightcontainer" className={styles.right}>
+        <Trends />
+      </div>
+    </div>
   );
 }
 

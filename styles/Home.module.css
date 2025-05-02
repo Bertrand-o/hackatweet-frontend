@@ -1,3 +1,30 @@
 .main {
+  height: 100vh;
   background-color: #161D26;
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
 }
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-row-start: 1;
+  grid-row-end: 13;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  border-right: 2px solid grey;
+  color: white;
+  margin: 30px 0px 20px 60px;
+}
+
+.center {
+  grid-row-start: 1;
+  grid-row-end: 13;
+  grid-column-start: 4;
+  grid-column-end: 9;
+  border-right: 2px solid grey;
+}
+
+
