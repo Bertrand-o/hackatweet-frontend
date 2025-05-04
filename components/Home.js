@@ -1,13 +1,9 @@
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
-<<<<<<< HEAD
 import Tweet from './Tweet';
 import Trends from './Trends'
 import LastTweets from "./LastTweets";
-=======
-import Tweet from "./Tweet";
-import Trends from "./Trends";
->>>>>>> bertrand
+
 
 function Home() {
   return (
@@ -24,7 +20,7 @@ function Home() {
           </div>
           <div>
             <p>USER</p>
-            <button>logout</button>
+            <button className={styles.logout}>logout</button>
           </div>
         </div>
       </div>

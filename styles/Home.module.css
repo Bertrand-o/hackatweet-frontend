@@ -30,4 +30,22 @@
   margin: 25px 0px 10px 30px;
 }
 
+.right {
+  grid-row-start: 1;
+  grid-row-end: 13;
+  grid-column-start: 9;
+  grid-column-end: 13;
+  color: white;
+}
+
+.logout{
+  background-color: transparent;
+  color: white;
+  border: 1px solid grey;
+  border-radius: 30px;
+  padding: 5px 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
 

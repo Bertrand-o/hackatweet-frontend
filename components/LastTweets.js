@@ -1,7 +1,7 @@
 import styles from '../styles/LastTweets.module.css'
 import Image from 'next/image'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react'
 
 function LastTweets() {

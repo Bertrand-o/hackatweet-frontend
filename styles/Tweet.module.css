@@ -17,20 +17,30 @@
   margin: 20px 50px
 }
 
-.positionbutton{
+.positionbutton {
+  margin-top: 10px;
   display: flex;
-  justify-content: flex-end;
-  margin-right: 30px;
+  justify-content: flex-end; 
+  align-items: center; 
+  width: 100%; 
+  padding-right: 40px; 
+  gap: 15px; 
 }
 
-.buttonclick{
+.buttonclick {
+  background-color: #1DA1F2;
   color: white;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: #3F93E8;
-  height: 35px;
-  width: 150px;
-  border-radius: 25px;
-  margin-right: 20px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
+
+.count {
+  font-size: 15px; 
+  color: white; 
+  font-weight: normal; 
+  margin-left: 20px;  
+}
