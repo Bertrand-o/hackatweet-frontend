@@ -4,6 +4,7 @@
   display: grid;
   grid-template-rows: repeat(12, 1fr);
   grid-template-columns: repeat(12, 1fr);
+  overflow: hidden;
 }
 
 .left {
@@ -22,6 +23,8 @@
   grid-column-start: 4;
   grid-column-end: 9;
   border-right: 1px solid grey;
+  display: flex;
+  flex-direction: column;
 }
 .contentleft{
   display: flex;

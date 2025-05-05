@@ -29,7 +29,6 @@ function Tweet() {
   return (
     <div className={styles.main}>
       <p>Home</p>
-
       <textarea
         placeholder="What's up ?"
         id="newtweet"

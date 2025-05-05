@@ -7,6 +7,7 @@ function Trends() {
   const router = useRouter()
   const [ trends, setTrends ] = useState([])
   const [ tweetCount, setTweetCount ] = useState({})
+  const [ filteredTweets, setFilteredTweets ] = useState([])
   const refresh = useSelector((state) => state.tweets.needsRefresh);
 
   useEffect(() => {
@@ -43,7 +44,9 @@ function Trends() {
   }
 
   const handleRouting = (trend) => {
-    router.push(`/home/[${trend}]`)
+    const trendToString = trend.toString()
+    const trendSliced = trendToString.slice(1)
+    router.push(`/home/${trendSliced}`)
   }
 
   const trendsList = trends.map((trend, index) => {
