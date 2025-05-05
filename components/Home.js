@@ -28,8 +28,8 @@ function Home() {
               className={styles.logoTwitter}
               src="/logohome.png"
               alt="Logo Twitter"
-              width={70}
-              height={70}
+              width={50}
+              height={50}
               onClick={() => router.push('/home')}
             />
           </div>

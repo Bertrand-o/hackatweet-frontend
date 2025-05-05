@@ -12,7 +12,7 @@
   grid-row-end: 13;
   grid-column-start: 1;
   grid-column-end: 4;
-  border-right: 2px solid grey;
+  border-right: 1px solid grey;
   color: white;  
 }
 
@@ -21,7 +21,7 @@
   grid-row-end: 13;
   grid-column-start: 4;
   grid-column-end: 9;
-  border-right: 2px solid grey;
+  border-right: 1px solid grey;
 }
 .contentleft{
   display: flex;
