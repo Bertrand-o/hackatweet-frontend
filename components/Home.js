@@ -19,12 +19,13 @@ function Home() {
           </div>
           <div>
             <p>USER</p>
-            <button>logout</button>
+            <button className={styles.logout}>logout</button>
           </div>
         </div>
       </div>
       <div id="centercontainer" className={styles.center}>
         <Tweet />
+        <LastTweets /> 
       </div>
       <div id="rightcontainer" className={styles.right}>
         <Trends />

@@ -1,0 +1,45 @@
+.tweetsContainer {
+  margin-top: 25px;
+}
+
+.tweet {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-top: 1px solid grey;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.userInfo, .text, .icons {
+  margin: 5px 0;
+}
+
+.pfp {
+  border-radius: 25px;
+}
+
+.firstname, .username, .date {
+  margin: 0 2px;
+}
+
+.firstname {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.username, .date {
+  color: grey;
+}
+
+.heartIcon, .trashcanIcon {
+  margin-right: 10px;
+}
+
+.faHeart {
+  margin-right: 2px;
+}

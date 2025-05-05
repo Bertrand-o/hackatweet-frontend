@@ -19,8 +19,6 @@ function SignIn() {
         .then(data => {
           if (data.result) {
             dispatch(login({ username: signInUsername, firstname: data.firstname, token: data.token }));
-            setSignInUsername('');
-            setSignInPassword('');
           }
         });
     }
