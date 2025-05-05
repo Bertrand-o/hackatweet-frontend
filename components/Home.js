@@ -4,15 +4,19 @@ import Tweet from './Tweet';
 import Trends from './Trends'
 import LastTweets from "./LastTweets";
 import { useRouter } from "next/router"
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { logout } from "../reducers/user";
+
 
 function Home() {
 
   const user = useSelector((state) => state.user.value)
   const router = useRouter()
+  const dispatch = useDispatch()
 
   const handleLogout = () => {
     router.push("/")
+    dispatch(logout())
   }
 
   return (
@@ -35,7 +39,7 @@ function Home() {
                 <span className={styles.username}>@{user.username}</span>
               </div>
             </div> 
-            <button className={styles.logout} onClick={handleLogout()} >Logout</button>
+            <button className={styles.logout} onClick={ () => handleLogout()} >Logout</button>
           </div>
         </div>
       </div>
