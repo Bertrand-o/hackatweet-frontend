@@ -15,7 +15,8 @@
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   border: none;
   border-bottom: solid 2px grey;
-  margin: 20px 50px
+  margin: 20px 50px;
+  outline: none;
 }
 
 .positionbutton {

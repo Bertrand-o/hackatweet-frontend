@@ -1,5 +1,6 @@
 import styles from "../styles/Modal.module.css";
 import Image from "next/image";
+import { useRouter } from "next/router"
 import { useState } from 'react'
 import { useDispatch } from "react-redux";
 import { login } from '../reducers/user'
@@ -9,6 +10,7 @@ function SignUp() {
   const [ signUpFirstname, setSignUpFirstname ] = useState('')
   const [ signUpUsername, setSignUpUsername ] = useState('')
   const [ signUpPassword, setSignUpPassword ] = useState('')
+  const router = useRouter()
 
   const handleSignup = () => {
         fetch('http://localhost:3000/users/signup', {
@@ -24,6 +26,7 @@ function SignUp() {
               setSignUpPassword('');
             }
           });
+          router.push("/home")
       }
 
   return(
@@ -32,7 +35,7 @@ function SignUp() {
       <p className={styles.text}>Create your Hackatweet account</p>
       <input className={styles.input} type="text" placeholder="Firstname" id="signUpFirstname" onChange={(e) => setSignUpFirstname(e.target.value)} value={signUpFirstname} />
       <input className={styles.input} type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setSignUpUsername(e.target.value)} value={signUpUsername} />
-      <input className={styles.input} type="text" placeholder="Password" id="signUpPassword" onChange={(e) => setSignUpPassword(e.target.value)} value={signUpPassword} />
+      <input className={styles.input} type="password" placeholder="Password" id="signUpPassword" onChange={(e) => setSignUpPassword(e.target.value)} value={signUpPassword} />
       <button className={styles.button} onClick={() => handleSignup()}>Sign up</button> 
     </div>
   )

@@ -17,7 +17,6 @@ function Tweet() {
       .then((response) => response.json())
       .then((data) => {
         if (data.result) {
-          //dispatch(addNewTweet(newTweet))
           setNewTweet("");
           setCount(0);
         }
