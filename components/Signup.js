@@ -20,13 +20,10 @@ function SignUp() {
         }).then(response => response.json())
           .then(data => {
             if (data.result) {
-              dispatch(login({ username: signUpUsername, firstname: data.firstname, token: data.token }));
-              setSignUpFirstname('')
-              setSignUpUsername('');
-              setSignUpPassword('');
+              dispatch(login({ username: signUpUsername, firstname: data.user.firstname, token: data.token }));
+              router.push("/home")
             }
           });
-          router.push("/home")
       }
 
   return(
