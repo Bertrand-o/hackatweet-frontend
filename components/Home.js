@@ -4,7 +4,13 @@ import Tweet from './Tweet';
 import Trends from './Trends'
 import LastTweets from "./LastTweets";
 
+import { useSelector } from 'react-redux'
+
 function Home() {
+
+  const user = useSelector((state) => state.user.value)
+  console.log(user)
+
   return (
     <div className={styles.main}>
       <div id="leftcontainer" className={styles.left}>
@@ -18,8 +24,14 @@ function Home() {
             />
           </div>
           <div>
-            <p>USER</p>
-            <button className={styles.logout}>logout</button>
+            <div className={styles.user}>
+              <Image className={styles.pfp} src='/twitter-pfp.avif' alt='Profile picture' width={40} height={40}/>
+              <div className={styles.userInfo}>
+                <span className={styles.firstname}>{user.firstname}</span>
+                <span className={styles.username}>@{user.username}</span>
+              </div>
+            </div> 
+            <button className={styles.logout}>Logout</button>
           </div>
         </div>
       </div>

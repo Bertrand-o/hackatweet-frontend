@@ -38,6 +38,7 @@
 
 .heartIcon, .trashcanIcon {
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .faHeart {
