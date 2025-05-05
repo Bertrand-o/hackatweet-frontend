@@ -7,7 +7,6 @@ import { useDispatch } from 'react-redux'
 import { login } from '../reducers/user'
 
 
-
 function SignIn() {
     const dispatch = useDispatch()
     const [ signInUsername, setSignInUsername ] = useState('')
@@ -22,7 +21,7 @@ function SignIn() {
       }).then(response => response.json())
         .then(data => {
           if (data.result) {
-            dispatch(login({ username: signInUsername, firstname: data.firstname, token: data.token }));
+            dispatch(login({ username: signInUsername, firstname: data.user.firstname, token: data.token }));
             router.push("/home")
           }
         });
@@ -34,7 +33,7 @@ function SignIn() {
         <p className={styles.text}>Connect to Hackatweet</p>
         <input className={styles.input} type="text" placeholder="Username" id="signInUsername" onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} />
         <input className={styles.input} type="password" placeholder="Password" id="signInPassword" onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} />
-        <button className={styles.button} onClick={handleLogin()}>Sign in</button> 
+        <button className={styles.button} onClick={() => handleLogin()}>Sign in</button> 
       </div>
     )
 }
