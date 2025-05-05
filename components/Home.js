@@ -3,13 +3,17 @@ import Image from "next/image";
 import Tweet from './Tweet';
 import Trends from './Trends'
 import LastTweets from "./LastTweets";
-
+import { useRouter } from "next/router"
 import { useSelector } from 'react-redux'
 
 function Home() {
 
   const user = useSelector((state) => state.user.value)
-  console.log(user)
+  const router = useRouter()
+
+  const handleLogout = () => {
+    router.push("/")
+  }
 
   return (
     <div className={styles.main}>
@@ -31,7 +35,7 @@ function Home() {
                 <span className={styles.username}>@{user.username}</span>
               </div>
             </div> 
-            <button className={styles.logout}>Logout</button>
+            <button className={styles.logout} onClick={handleLogout()} >Logout</button>
           </div>
         </div>
       </div>
