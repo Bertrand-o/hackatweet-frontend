@@ -1,12 +1,14 @@
 import styles from "../styles/Tweet.module.css";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { refreshTweets } from '../reducers/tweets';
+
 
 function Tweet() {
+  const dispatch = useDispatch()
   const [newTweet, setNewTweet] = useState("");
   const [count, setCount] = useState(0);
   const user = useSelector((state) => state.user.value);
-  console.log(user);
 
   const clickNewTweet = () => {
     fetch(`http://localhost:3000/tweets/newtweet/${user.token}`, {
@@ -17,6 +19,7 @@ function Tweet() {
       .then((response) => response.json())
       .then((data) => {
         if (data.result) {
+          dispatch(refreshTweets())
           setNewTweet("");
           setCount(0);
         }

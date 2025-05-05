@@ -48,4 +48,25 @@
   cursor: pointer;
 }
 
+.user {
+  display: flex;
+  margin-bottom: 20px;
+}
 
+.pfp {
+  border-radius: 25px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.firstname {
+  font-weight: bold;
+}
+
+.username, .date {
+  color: grey;
+}

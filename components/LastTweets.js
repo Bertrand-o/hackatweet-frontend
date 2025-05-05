@@ -3,22 +3,39 @@ import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { refreshTweets } from '../reducers/tweets';
 
 function LastTweets() {
+  const dispatch = useDispatch()
   const [tweets, setTweets] = useState([])
 
   const user = useSelector((state) => state.user.value)
+  const refresh = useSelector((state) => state.tweets.needsRefresh);
+
+  const fetchTweets = () => {
+    fetch('http://localhost:3000/tweets')
+      .then(response => response.json())
+      .then(data => {
+        if (data.result) {
+          setTweets(data.tweets)
+        }
+      })
+  }
 
   useEffect(() => {
-    fetch('http://localhost:3000/tweets')
-    .then(response => response.json())
-    .then(data => {
-      if (data.result) {
-        setTweets(data.tweets)
-      }
+    fetchTweets()
+  }, [refresh])
+
+  const handleDeleteTweet = (tweetId) => {
+    fetch(`http://localhost:3000/tweets/deletetweet/${tweetId}`, {
+      method: 'DELETE'
     })
-  }, [])
+    .then(response => response.json())
+    .then(() => {
+      dispatch(refreshTweets())
+    })
+  }
 
   const tweetsList = tweets.map((data, index) => {
     return(
@@ -34,7 +51,7 @@ function LastTweets() {
       </div>
       <div className={styles.icons}>
         <span className={styles.heartIcon} ><FontAwesomeIcon icon={faHeart}  /> 0</span>
-        {data.author.token === user.token ? <FontAwesomeIcon icon={faTrashCan} className={styles.trashcanIcon} /> : <></>}
+        {data.author.token === user.token ? <FontAwesomeIcon icon={faTrashCan} className={styles.trashcanIcon} onClick={() => handleDeleteTweet(data._id)}/> : <></>}
       </div>
     </div>
     )
