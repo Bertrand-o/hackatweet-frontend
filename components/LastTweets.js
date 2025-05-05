@@ -38,9 +38,23 @@ function LastTweets() {
       });
   };
 
+  const handleLike = (tweetId) => {
+    fetch(`http://localhost:3000/tweets/likes/${tweetId}`, {
+      method: 'PUT',
+      headers: { 'Content-Type' : 'application/json' },
+      body: JSON.stringify({
+        token: user.token
+      })
+    })
+    .then(response => response.json())
+    .then(() => {
+      dispatch(refreshTweets());
+    })
+  }
+
   const tweetsList = tweets.map((data, index) => {
-
-
+    console.log(data.likes)
+    const style = {color: '#E60071'}
     return (
       <div className={styles.tweet} key={index}>
         <div className={styles.userInfo}>
@@ -57,8 +71,8 @@ function LastTweets() {
         </div>
         <div className={styles.text}>{data.text}</div>
         <div className={styles.icons}>
-          <span className={styles.heartIcon}>
-            <FontAwesomeIcon icon={faHeart} /> 0
+          <span className={styles.heartIcon} style={data.likes.find(users => users.token === user.token) ? style : {}}>
+            <FontAwesomeIcon icon={faHeart} onClick={() => handleLike(data._id)}/> {data.likes.length}
           </span>
           {data.author.token === user.token ? (
             <FontAwesomeIcon
