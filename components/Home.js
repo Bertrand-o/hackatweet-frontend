@@ -25,10 +25,12 @@ function Home() {
         <div className={styles.contentleft}>
           <div>
             <Image
+              className={styles.logoTwitter}
               src="/logohome.png"
               alt="Logo Twitter"
               width={70}
               height={70}
+              onClick={() => router.push('/home')}
             />
           </div>
           <div>
