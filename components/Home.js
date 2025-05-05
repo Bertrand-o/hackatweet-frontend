@@ -46,6 +46,7 @@ function Home() {
         </div>
       </div>
       <div id="centercontainer" className={styles.center}>
+        <p className={styles.home}>Home</p>
         <Tweet />
         <LastTweets /> 
       </div>
